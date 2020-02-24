@@ -1,0 +1,94 @@
+<p>edit-uhr works!</p>
+
+<div class="container">
+<div class="r-50">
+    <h3 class="text-center">Deine eigene Uhr generieren</h3>
+    <div>
+        <h4 class="optiontitle">Grundeinstellung</h4>
+        <div class="optiondiv">
+            <input type="radio" [(ngModel)]="show" value="clock_and_date"> Datum und Uhrzeit
+             <input type="radio" [(ngModel)]="show" value="only_date"> Nur Datum
+            <input type="radio" [(ngModel)]="show" value="only_clock"> Nur Uhrzeit
+        </div>
+    </div>
+    <div>
+        <h4 class="optiontitle">Uhr: Einstellung</h4>
+        <div class="optiondiv">
+            <input type="checkbox" [(ngModel)]="second"> Sekunden
+        </div>
+    </div>
+    <div id="date_options">
+        <h3 class="optiontitle">Datum: Format und Ausrichtung</h3>
+        <div class="optiondiv">
+            <select id="dateFormat" [(ngModel)]="dateformat">
+                <option value="dd.mm.yyyy">01.12.2011</option>
+                <option value="dd.mm.yy">01.12.11</option>
+                <option value="dd.month.yyyy">01. Dezember .2011</option>
+                <option value="dd.mon.yyyy">01. Dez. 2011</option>
+                <option value="month.yyyy">Dezember 2011</option>
+                <option value="mon.yyyy">Dez. 2011</option>
+                <option value="dd.mon">01. Dez.</option>
+                <option value="dd.month">01. Dezember</option>
+                <option value="dd.mm">01. 12.</option>
+            </select>&nbsp;&nbsp;&nbsp;&nbsp;
+            <p>Test: {{dateformat}}</p>
+            <input type="radio" name="date_align_horizontal" id="date_align_horizontal_left"
+                value="left">Links&nbsp;&nbsp;&nbsp;
+            <input type="radio" name="date_align_horizontal" id="date_align_horizontal_right"
+                value="right">Rechts&nbsp;&nbsp;&nbsp;
+            <input type="radio" name="date_align_vertical" id="date_align_vertical_bottom"
+                value="bottom">unten&nbsp;&nbsp;&nbsp;
+            <input type="radio" name="date_align_vertical" id="date_align_vertical_top" value="top">oben
+        </div>
+    </div>
+<div>
+            <h3 class="optiontitle">Schriftfarbe</h3>
+            <div class="optiondiv">
+                <input type="color" [(ngModel)]="fontcolor">
+            </div>
+</div>
+<div>
+            <h3 class="optiontitle">Hintergrundfarbe</h3>
+            <div class="optiondiv">
+                <input type="color" [(ngModel)]="bgcolor">
+            </div>
+</div>
+
+
+
+    <div>
+        <h3 class="optiontitle">Schriftart</h3>
+        <div class="optiondiv">
+            <select name="fontFamily" id="fontFamily">
+                <option style="font-family:Verdana" id="Verdana">Verdana </option>
+                <option style="font-family:Georgia" id="Georgia">Georgia </option>
+                <option style="font-family:Arial" id="Arial">Arial </option>
+                <option style="font-family:Lemon" id="Lemon">Lemon </option>
+                <option style="font-family:Nosifer Caps" id="Nosifer Caps">Nosifer Caps </option>
+                <option style="font-family:Knewave" id="Knewave">Knewave </option>
+                <option style="font-family:Fascinate" id="Fascinate">Fascinate </option>
+                <option style="font-family:Engagement" id="Engagement">Engagement </option>
+                <option style="font-family:Fresca" id="Fresca">Fresca </option>
+                <option style="font-family:Marmelad" id="Marmelad">Marmelad </option>
+                <option style="font-family:Geostar Fill" id="Geostar Fill">Geostar Fill </option>
+                <option style="font-family:Poller One" id="Poller One">Poller One </option>
+                <option style="font-family:League Script" id="League Script">League Script </option>
+            </select>
+            <select name="boderstyle" id="borderstyle">
+                <option value="rounded" id="cl_rounded">Runde Ecken</option>
+                <option value="box" id="cl_box">Box</option>
+            </select>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="r-50">
+    <h3 class="text-center">Vorschau deiner Uhr</h3>
+    <div class="preview-component">
+        <app-uhr-comp [scolor]="fontcolor" [backcolor]="bgcolor" [showsecond]="second" [whatshow]="show"></app-uhr-comp>
+    </div>
+    
+</div>
+</div>
