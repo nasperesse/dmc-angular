@@ -11,7 +11,8 @@ export class EditUhrComponent implements OnInit {
   bgcolor: string;
   second = true;
   show = 'clock_and_date';
-  dateformat: string;
+  dateformat: string = 'dd.MM.yyyy';
+  fontfamily: string;
 
   constructor() { }
 

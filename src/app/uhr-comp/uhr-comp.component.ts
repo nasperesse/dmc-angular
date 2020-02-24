@@ -8,25 +8,25 @@ import { interval, Subscription } from 'rxjs';
 })
 export class UhrCompComponent implements OnInit, OnDestroy {
 
-  constructor() { }
-
   today: Date;
-  dateformat: string;
   hour = 'H';
   minute = ':mm';
   second = ':ss';
   subscription: Subscription;
   @Input() backcolor: string;
   @Input() scolor: string;
-  @Input() showsecond: boolean;
+  @Input() showsecond: boolean = true;
   @Input() whatshow: string;
+  @Input() dateformat: string = 'dd.MM.yyyy';
+  @Input() fontfamily: string;
 
    onlydate: boolean;
    onlyclock: boolean;
 
 
+   constructor() {}
+
   ngOnInit() {
-    this.dateformat = this.hour + this.minute + this.second;
     const source = interval(1000);
     this.subscription = source.subscribe(val => this.uhrZeit());
   }
@@ -41,11 +41,6 @@ export class UhrCompComponent implements OnInit, OnDestroy {
       this.onlyclock = false;
     }
 
-    this.dateformat = this.hour + this.minute + this.second;
-
-    if (this.showsecond === false) {
-      this.dateformat = this.hour + this.minute;
-    }
     this.today = new Date();
   }
 

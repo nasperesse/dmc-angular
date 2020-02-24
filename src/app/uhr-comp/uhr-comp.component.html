@@ -173,16 +173,14 @@
 
 <div class="card" target="_blank" [style.background-color]="backcolor ||  'lightblue'" rel="noopener">
     <div class="highlight-card">
-        <span class="the_clock" [style.color]="scolor" *ngIf="onlyclock">
+        <span class="the_clock" [style.font-family]="fontfamily" [style.color]="scolor" *ngIf="onlyclock">
             <span class="clock_u">{{today | date:hour}}</span>
             <span class="clock_u">{{today | date:minute}}</span>
-            <span class="clock_u">{{today | date:second}}</span>
+            <span class="clock_u" *ngIf="showsecond">{{today | date:second}}</span>
         </span>
         <br>
-        <span class="the_date" [style.color]="scolor" *ngIf="onlydate">
-            <span class="date_u">{{today | date:'dd'}}</span>
-            <span class="date_u">{{today | date:'.MM'}}</span>
-            <span class="date_u">{{today | date:'.yyyy'}}</span>
+        <span class="the_date" [style.font-family]="fontfamily" [style.color]="scolor" *ngIf="onlydate">
+            <span class="date_u">{{today | date:dateformat:'fr'}}</span>
         </span>
     </div>
 </div>
