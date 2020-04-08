@@ -23,12 +23,12 @@ import { from } from 'rxjs';
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { 
+export class AppModule {
 
   constructor(private injector: Injector) {}
 
   ngDoBootstrap() {
-    const customElement = createCustomElement(UhrCompComponent, {injector: this.injector});
-    customElements.define('uhr-comp', customElement);
+    const uhr = createCustomElement(UhrCompComponent, {injector: this.injector});
+    customElements.define('uhr-comp', uhr);
   }
 }
