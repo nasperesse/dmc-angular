@@ -1,34 +1,31 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, Injector } from '@angular/core';
-import {FormsModule} from '@angular/forms'
+import {FormsModule} from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { UhrCompComponent } from './uhr-comp/uhr-comp.component';
-import { EditUhrComponent } from './edit-uhr/edit-uhr.component';
 import {createCustomElement} from '@angular/elements';
 import { from } from 'rxjs';
+import {UhrCompComponent} from './components/angular-dmc/uhr-comp/uhr-comp.component';
+import {AngularDmcModule} from './components/angular-dmc/angular-dmc.module';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    UhrCompComponent,
-    EditUhrComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    AngularDmcModule
   ],
   entryComponents: [UhrCompComponent],
   providers: [],
-  bootstrap: [AppComponent]
 })
 export class AppModule {
-
-  constructor(private injector: Injector) {}
-
-  ngDoBootstrap() {
-    const uhr = createCustomElement(UhrCompComponent, {injector: this.injector});
+  constructor(injector: Injector) {
+    const uhr = createCustomElement(UhrCompComponent, {injector});
     customElements.define('uhr-comp', uhr);
   }
+
+  ngDoBootstrap() {}
 }
