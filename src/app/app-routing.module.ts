@@ -1,9 +1,10 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { EditUhrComponent } from './components/angular-dmc/edit-uhr/edit-uhr.component';
-import { AppComponent } from './app.component';
 import {DmcComponent} from './components/angular-dmc/dmc/dmc.component';
 import {ListCompComponent} from './components/angular-dmc/list-comp/list-comp.component';
+import { MessagingCompComponent } from './components/angular-dmc/messaging-comp/messaging-comp.component';
+import { EditMessagingComponent } from './components/angular-dmc/edit-messaging/edit-messaging.component';
 
 
 const routes: Routes = [
@@ -17,6 +18,19 @@ const routes: Routes = [
                               {
                                 path: 'edit-uhr',
                                 component: EditUhrComponent
+                              },
+                              {
+                                path: 'edit-chat',
+                                component: EditMessagingComponent
+                              },
+                              {
+                                path: 'test',
+                                component: MessagingCompComponent,
+                                data: {apikey: 'Z4NZ7T5-AAE4H9V-GW1FPR3-PAQCP7W'}
+                              },
+                              {
+                                path: 'chat/:apikey',
+                                component: MessagingCompComponent
                               }
                             ]
                           }
@@ -24,6 +38,6 @@ const routes: Routes = [
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+exports: [RouterModule]
 })
 export class AppRoutingModule { }

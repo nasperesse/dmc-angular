@@ -1,0 +1,17 @@
+<p>messaging-comp works!</p>
+<div id="chat" [style.background-color]="bgcolor">
+    <h3 [style.color]="namecolor" *ngIf="user">Hello {{user.name}}</h3>
+    <h5 style="color: red; text-align: center;" *ngIf="schreib">{{username}} schreibt ...</h5>
+    <div id="messages">
+        <div [class]="message['from']['apiKey'] === apikey ? ' container darker' : 'container' " *ngFor="let message of messages">
+            <img [src]="message['from']['logo']" alt="Avatar" [class]="message['from']['apiKey'] === apikey ? 'right' : '' ">
+            <p [style.font-family]="fontFamily">{{message.content}}</p>
+            <span [class]="message['from']['apiKey'] === apikey ? 'time-left' : 'time-right'">{{message.sendDate}} {{message.from.apiKey === apikey ? '': 'von '+ message.from.name}}</span>
+        </div>
+        <div id="message-end"></div>
+    </div>
+    <div class="input-icons">
+        <textarea (keydown.enter)="send()" (blur)="stopptSchreibt()" (focus)="onSchreibt()" class="input-field" matInput type="" placeholder="Start chatting..." name="messageText" [(ngModel)]="messageText"></textarea>
+        <mat-icon class="icon" (click)="send()">send</mat-icon>
+    </div>
+</div>

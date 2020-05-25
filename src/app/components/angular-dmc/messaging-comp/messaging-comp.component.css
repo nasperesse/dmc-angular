@@ -1,0 +1,110 @@
+.container {
+    border: 2px solid #dedede;
+    background-color: #f1f1f1;
+    border-radius: 5px;
+    padding: 0;
+    margin: 5px 0;
+}
+
+
+/* Darker chat container */
+
+.darker {
+    border-color: #ccc;
+    background-color: #ddd;
+}
+
+
+/* Clear floats */
+
+.container::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+
+/* Style images */
+
+.container img {
+    float: left;
+    max-width: 60px;
+    width: 100%;
+    margin-right: 20px;
+    border-radius: 50%;
+}
+
+
+/* Style the right image */
+
+.container img.right {
+    float: right;
+    margin-left: 20px;
+    margin-right: 0;
+}
+
+
+/* Style time text */
+
+.time-right {
+    float: right;
+    color: #aaa;
+}
+
+
+/* Style time text */
+
+.time-left {
+    float: left;
+    color: #999;
+}
+
+div#messages {
+    overflow: auto;
+    background-color: transparent;
+    height: 375px;
+    width: 350px;
+}
+
+div#chat {
+    margin: auto;
+    width: 350px;
+    padding-left: 8px;
+    padding-right: 8px;
+}
+
+.input-icons mat-icon {
+    position: absolute;
+}
+
+.input-icons {
+    display: flex;
+    direction: row;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.icon {
+    padding: 10px;
+    padding-bottom: 0;
+    color: green;
+    text-align: right;
+}
+
+.icon:hover {
+    cursor: pointer;
+}
+
+.icon::after {
+    content: '|';
+    height: 100%;
+}
+
+.input-field {
+    border-radius: 10%;
+    display: block;
+    width: 100%;
+    padding: 5px;
+    padding-left: 40px;
+    text-align: center;
+}

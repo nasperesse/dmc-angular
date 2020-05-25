@@ -1,5 +1,5 @@
 <style>
-    :host {
+     :host {
         font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
         font-size: 14px;
         color: #333;
@@ -81,7 +81,6 @@
         border-radius: 4px;
         border: 1px solid #eee;
         background-color: #fafafa;
-        height: 40px;
         width: 200px;
         margin: 0 8px 16px;
         padding: 16px;
@@ -134,14 +133,15 @@
         line-height: 33px;
         display: inline;
     }
+
     .clock_u {
         font-size: 33px;
         line-height: 33px;
     }
 
     .the_date {
-        display: block; 
-        font-size: 16.5px; 
+        display: block;
+        font-size: 16.5px;
         line-height: 16.5px;
     }
 
@@ -149,22 +149,17 @@
         font-size: 16.5px;
         line-height: 16.5px;
     }
-
-
-
     /* Responsive Styles */
-    @media screen and (max-width: 767px) {
 
+    @media screen and (max-width: 767px) {
         .card-container>*:not(.circle-link),
         .terminal {
             width: 100%;
         }
-
         .card:not(.highlight-card) {
             height: 16px;
             margin: 8px 0;
         }
-
         .card.highlight-card span {
             margin-left: 72px;
         }
@@ -175,8 +170,8 @@
     <div class="highlight-card">
         <span class="the_clock" [style.font-family]="fontfamily" [style.color]="scolor" *ngIf="onlyclock">
             <span class="clock_u">{{today | date:hour}}</span>
-            <span class="clock_u">{{today | date:minute}}</span>
-            <span class="clock_u" *ngIf="showsecond">{{today | date:second}}</span>
+        <span class="clock_u">{{today | date:minute}}</span>
+        <span class="clock_u" *ngIf="showsecond">{{today | date:second}}</span>
         </span>
         <br>
         <span class="the_date" [style.font-family]="fontfamily" [style.color]="scolor" *ngIf="onlydate">

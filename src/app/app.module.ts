@@ -4,9 +4,10 @@ import {FormsModule} from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import {createCustomElement} from '@angular/elements';
-import { from } from 'rxjs';
 import {UhrCompComponent} from './components/angular-dmc/uhr-comp/uhr-comp.component';
 import {AngularDmcModule} from './components/angular-dmc/angular-dmc.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MessagingCompComponent } from './components/angular-dmc/messaging-comp/messaging-comp.component';
 
 @NgModule({
   declarations: [
@@ -16,15 +17,20 @@ import {AngularDmcModule} from './components/angular-dmc/angular-dmc.module';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    AngularDmcModule
-  ],
-  entryComponents: [UhrCompComponent],
+    AngularDmcModule,
+    BrowserAnimationsModule
+    ],
+  entryComponents: [UhrCompComponent, MessagingCompComponent],
   providers: [],
+  bootstrap: [AppComponent]
 })
 export class AppModule {
   constructor(injector: Injector) {
     const uhr = createCustomElement(UhrCompComponent, {injector});
-    customElements.define('uhr-comp', uhr);
+    customElements.define('angular-uhr-comp', uhr);
+    const chat = createCustomElement(MessagingCompComponent, {injector});
+    customElements.define('angular-chat-comp', chat);
+
   }
 
   ngDoBootstrap() {}
