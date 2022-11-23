@@ -32,7 +32,7 @@
     "node": "^13.13.0",
     "npm": "^6.14.4",
     "rxjs": "~6.5.5",
-    "socket.io": "^2.3.0",
+    "socket.io": "^2.5.0",
     "tslib": "^1.11.1",
     "zone.js": "~0.10.3"
   },
@@ -47,7 +47,7 @@
     "codelyzer": "^5.2.2",
     "jasmine-core": "~3.5.0",
     "jasmine-spec-reporter": "~4.2.1",
-    "karma": "^5.0.1",
+    "karma": "^5.2.3",
     "karma-chrome-launcher": "~3.1.0",
     "karma-coverage-istanbul-reporter": "~2.1.0",
     "karma-jasmine": "~2.0.1",
